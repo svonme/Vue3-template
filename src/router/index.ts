@@ -3,7 +3,7 @@
  * @author svon.me@gmail.com
  */
 
-import { routerConfig } from "./config";
+import * as alias from "./alias";
 import type { Router, RouteRecordRaw } from "vue-router";
 import { createRouter as _createRouter, createWebHistory } from "vue-router";
 
@@ -13,22 +13,20 @@ const routes: RouteRecordRaw[]  = [
     component: () => import("src/layout/index.vue"),
     children: [
       {
-        path: "/",
-        name: "home",
+        path: "",
+        redirect: {
+          name: alias.Home.name
+        }
+      },
+      {
+        ...alias.Home,
         component: () => import("src/pages/home/index.vue"),
       },
       {
-        name: "404",
-        path: routerConfig.common.E404(),
+        ...alias.NotFount,
         component: () => import("src/pages/common/404.vue"),
       },
     ],
-  },
-  {
-    path: "/:(.*)",
-    redirect: {
-      name: "404"
-    },
   },
 ];
 

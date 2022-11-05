@@ -3,23 +3,16 @@
  * @author svon.me@gmail.com
  */
 
-// @ts-ignore
-import argv from "@fengqiaogang/argv";
-import vuePlugin from "@vitejs/plugin-vue";
-import vueJsx from "@vitejs/plugin-vue-jsx";
-import _ from "lodash";
 import path from "path";
-import AutoImport from "unplugin-auto-import/vite";
-import {ElementPlusResolver} from "unplugin-vue-components/resolvers";
-import Components from "unplugin-vue-components/vite";
 import {defineConfig} from "vite";
+import vuePlugin from "@vitejs/plugin-vue";
 import WindCSS from "vite-plugin-windicss";
+import vueJsx from "@vitejs/plugin-vue-jsx";
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
 
-
-
-// @ts-ignore
 export default defineConfig(async function() {
-  
   return {
     base: "/",
     css: {
@@ -40,9 +33,11 @@ export default defineConfig(async function() {
       WindCSS(),
       vueJsx({}),
       AutoImport({
-        resolvers: [ElementPlusResolver({
-          importStyle: "sass"
-        })],
+        resolvers: [
+          AntDesignVueResolver({
+            importStyle: "less"
+          })
+        ],
       }),
 
       Components({
@@ -52,11 +47,21 @@ export default defineConfig(async function() {
         directoryAsNamespace: true,
         exclude: [/node_modules/, /\.git/, /\.nuxt/],
         resolvers: [
-          ElementPlusResolver({
+          AntDesignVueResolver({
             importStyle: "css"
           })
         ],
       }),
     ],
+    server: {
+      port: 8080,
+      host: "0.0.0.0",
+      https: false,
+      hmr: {
+        protocol: 'ws',
+        host: '127.0.0.1',
+        port: 8080,
+      }
+    },
   };
 });

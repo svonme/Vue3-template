@@ -1,8 +1,9 @@
 node_modules
 .DS_Store
 dist
+*.zip
+*.7z
 *.local
-.vscode
 .idea
 yarn.lock
 pnpm-lock.yaml
