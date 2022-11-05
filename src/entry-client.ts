@@ -10,11 +10,17 @@ import "src/styles/main.less";
 
 import { AppName } from "./config/index";
 import { createApp } from "./bootstrap/main";
+import { userStore } from "src/store";
 
 const main = async function () {
   const { app, router } = createApp();
 
-  await router.isReady();
+  const user = userStore();
+
+  await Promise.all([
+    user.loadUserInfo(), // 获取用户信息
+    router.isReady()     // 加载路由
+  ]);
   
   app.mount(`#${AppName}`, true);
 };

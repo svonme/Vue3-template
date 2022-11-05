@@ -4,8 +4,6 @@
  */
 
 import _ from "lodash-es";
-import { api } from "src/api";
-import Cookies from "js-cookie";
 import { defineStore } from "pinia";
 import { UserIfno } from "src/types/user";
 
@@ -23,8 +21,8 @@ export const userStore = defineStore("user", {
   },
   actions: {
     // 获取用户信息
-    async getInfo() {
-      
+    async loadUserInfo() {
+      console.log("加载用户数据");
     }
   }
 });
