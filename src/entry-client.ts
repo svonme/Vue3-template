@@ -22,7 +22,7 @@ const main = async function () {
     router.isReady()     // 加载路由
   ]);
   
-  app.mount(`#${AppName}`, true);
+  app.mount(`#${AppName}`);
 };
 
 setTimeout(main);

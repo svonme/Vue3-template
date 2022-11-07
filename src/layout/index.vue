@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import { RouterView } from "vue-router";
+/**
+ * @file 页面结构
+ * @author svon.me@gmail.com
+ */
 </script>
+
 <template>
-  <RouterView></RouterView>
+  <router-view></router-view>
 </template>
