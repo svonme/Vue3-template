@@ -2,7 +2,9 @@
   "name": "vite-project",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "_moduleAliases": {
     "@root": ".",
