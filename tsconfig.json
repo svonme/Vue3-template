@@ -1,51 +1,45 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "baseUrl": ".",
-    "target": "esnext",
-    "isolatedModules": true,
-    "useDefineForClassFields": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
-    "jsx": "preserve",
+    "composite": true,
     "sourceMap": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "lib": ["ES5", "dom"],
-    "incremental": true,
-    "skipLibCheck": true,
-    "noUnusedLocals": false,
     "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true,
+    "preserveConstEnums": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "noEmitHelpers": true,
     "importHelpers": true,
     "noEmitOnError": true,
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "noEmit": true,
     "skipDefaultLibCheck": true,
-    "preserveConstEnums": true,
-    "typeRoots": [
-      "node_modules/@types",
-      "node_modules/@fengqiaogang"
-    ],
     "types": [
       "node",
       "vite/client",
       "vue-router"
-    ],
+    ], 
     "paths": {
       "src/*": ["./src/*"]
-    }
+    },
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.ts", 
+    "src/**/*.d.ts", 
+    "src/**/*.tsx", 
+    "src/**/*.vue",
+    "vite.config.ts"
   ],
-  "exclude": [
-    "node_modules", "dist", "src/plugins/vue"
-  ]
 }

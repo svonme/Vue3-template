@@ -1,0 +1,15 @@
+/**
+ * @file 全局样式
+ * @author svon.me@gmail.com
+ */
+
+/** 全局样式 */
+@import 'ant-design-vue/dist/antd.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  @apply min-h-screen;
+}

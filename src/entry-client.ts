@@ -6,7 +6,7 @@
 // 引入 tailwindcss
 import "virtual:windi.css";
 // 引入项目全局样式
-import "src/styles/main.less";
+import "src/styles/main.scss";
 
 import { AppName } from "./config/index";
 import { createApp } from "./bootstrap/main";

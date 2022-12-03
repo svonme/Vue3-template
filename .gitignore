@@ -1,14 +1,9 @@
 node_modules
 .DS_Store
 dist
+cache
 *.zip
 *.7z
 *.local
 .idea
-yarn.lock
-pnpm-lock.yaml
-components.d.ts
-src/config/iconname.ts
-auto-imports.d.ts
 .env.*.local
-coverage

@@ -11,13 +11,10 @@ const routes: RouteRecordRaw[]  = [
   {
     path: "/",
     component: () => import("src/layout/index.vue"),
+    redirect: {
+      name: alias.Home.name
+    },
     children: [
-      {
-        path: "",
-        redirect: {
-          name: alias.Home.name
-        }
-      },
       {
         ...alias.Home,
         component: () => import("src/pages/home/index.vue"),
