@@ -9,7 +9,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind screens;
 
 html, body {
   @apply min-h-screen;
+}
+
+h2 {
+  @apply max-w-80;
+  @apply text-eci-black;
 }
