@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const { spacing, height, width, colors } = require("./tailwind/config.cjs");
+
 module.exports = {
   content: [
     './index.html', 
@@ -6,17 +9,17 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        eci: {
-          black: "#333"
-        }
+      colors,
+      spacing,
+      height,
+      minHeight: height,
+      maxHeight: height,
+      width,
+      minWidth: width,
+      maxWidth: width,
+      lineHeight: {
+        "12.5": "3.125rem",
       },
-      maxWidth: {
-        "80": "20rem"
-      },
-      spacing: {
-        "80": "20rem"
-      }
     },
   },
   plugins: [
