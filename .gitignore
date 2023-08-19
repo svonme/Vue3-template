@@ -7,3 +7,4 @@ dist
 *.local
 .idea
 .env.*.local
+pnpm-lock.yaml
