@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
-const { spacing, height, width, colors } = require("./tailwind/config.cjs");
+const deep = require("./tailwind/deep.cjs");
+const { opacity, spacing, height, width, colors } = require("./tailwind/config.cjs");
 
 module.exports = {
   content: [
@@ -20,9 +21,11 @@ module.exports = {
       lineHeight: {
         "12.5": "3.125rem",
       },
+      textOpacity: opacity,
+      backgroundOpacity: opacity,
     },
   },
   plugins: [
-
+    deep
   ],
 }

@@ -10,6 +10,7 @@ import { SmileTwoTone } from "@ant-design/icons-vue";
 
 const message = ref<string>("Vue3 tempate");
 
+
 </script>
 <template>
   <div class="w-full h-full flex justify-center items-center">
@@ -18,7 +19,7 @@ const message = ref<string>("Vue3 tempate");
         <smile-twoTone />
       </template>
       <template #title>
-        <h1 class="text-black text-opacity-85 p-4.5">{{ message }}</h1>
+        <h1 class="text-primary text-opacity-60 p-4.25">{{ message }}</h1>
         <h2>Hello</h2>
       </template>
     </Result>

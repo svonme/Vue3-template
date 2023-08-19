@@ -4,7 +4,7 @@
  */
 
 /** 全局样式 */
-@import "ant-design-vue/dist/antd.css";
+@import "ant-design-vue/dist/reset.css";
 
 @tailwind base;
 @tailwind components;
@@ -16,6 +16,6 @@ html, body {
 }
 
 h2 {
-  @apply max-w-80;
+  // @apply max-w-80;
   @apply text-black;
 }

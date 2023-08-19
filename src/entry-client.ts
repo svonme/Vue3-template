@@ -3,9 +3,6 @@
  * @author svon.me@gmail.com
  */
 
-// 引入 tailwindcss
-import "virtual:windi.css";
-import "virtual:windi-devtools";
 // 引入项目全局样式
 import "src/styles/main.scss";
 

@@ -1,30 +1,42 @@
 
-const variables = {};
+const tailWind = function(length = 100, fontSize = 16) {
+  const unit = 0.125;
+  const spacing = {};
+  for (let i = 1; i <= length; i++) {
+    for(let size = 1; size <= 8; size++) {
+      const key = size * unit * i;
+      const value = key * 4 / fontSize;
+      spacing[String(key)] = `${value}rem`;
+    }
+  }
+  return spacing;
+}
 
-const spacing = {
-  "2.5": "0.625rem",
-  "12.5": "3.125rem",
-  "80": "20rem"
-};
+const opacity = function() {
+  const value = {};
+  for(let i = 0; i <= 100; i++) {
+    const key = String(i);
+    value[key] = String(i / 100);
+  }
+  return value;
+}
 
-const height = {
-  "12.5": "3.125rem"
-};
 
-const width = {
-  fit: "fit-content",
-  "40": "10rem",
-  "45": "11.25rem",
-  "80": "20rem"
-};
 
 const colors = {
   red: "#E57373",
   black: "#262626",
   primary: "#3c6cfe",
   error: "#FC4B3B",
-  yellow: "#FAAD14",
-  eci: variables,
+  yellow: "#FAAD14"
 };
 
-module.exports = { spacing, height, width, colors };
+const tailwindValue = tailWind();
+
+module.exports = { 
+  opacity: opacity(),
+  spacing: tailwindValue,
+  height: tailwindValue, 
+  width: Object.assign({ fit: "fit-content" }, tailwindValue), 
+  colors
+};
