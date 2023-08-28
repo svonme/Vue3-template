@@ -1,13 +1,14 @@
+const BigNumber = require("bignumber.js");
 
-const tailWind = function(length = 100, fontSize = 16) {
-  const unit = 0.125;
+const tailWind = function(length = 400, fontSize = 16) {
+  const chunk = 8;
+  const unit = new BigNumber(1).div(chunk);
+  const value = new BigNumber(fontSize).div(4).div(chunk);
   const spacing = {};
-  for (let i = 1; i <= length; i++) {
-    for(let size = 1; size <= 8; size++) {
-      const key = size * unit * i;
-      const value = key * 4 / fontSize;
-      spacing[String(key)] = `${value}rem`;
-    }
+  for (let index = 1, size = length * chunk; index <= size; index++) {
+    const key = new BigNumber(index).times(unit).toFixed(6);
+    const data = new BigNumber(index).times(value).div(fontSize).toFixed(6);
+    spacing[Number(key).toString()] = Number(data).toString() + "rem";
   }
   return spacing;
 }
