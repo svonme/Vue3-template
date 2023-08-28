@@ -7,4 +7,5 @@ dist
 *.local
 .idea
 .env.*.local
-pnpm-lock.yaml
+*lock.yaml
+tsconfig.tsbuildinfo
