@@ -1,4 +1,5 @@
 const BigNumber = require("bignumber.js");
+const colors = require("./style.cjs");
 
 const tailWind = function(length = 400, fontSize = 16) {
   const chunk = 8;
@@ -21,16 +22,6 @@ const opacity = function() {
   }
   return value;
 }
-
-
-
-const colors = {
-  red: "#E57373",
-  black: "#262626",
-  primary: "#3c6cfe",
-  error: "#FC4B3B",
-  yellow: "#FAAD14"
-};
 
 const tailwindValue = tailWind();
 

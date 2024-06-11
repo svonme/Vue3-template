@@ -8,7 +8,7 @@ import {ref} from "vue";
 import { Result } from "ant-design-vue";
 import { SmileTwoTone } from "@ant-design/icons-vue";
 
-const message = ref<string>("Vue3 tempate");
+const message = ref<string>("Vue3 template");
 
 
 </script>
@@ -16,7 +16,7 @@ const message = ref<string>("Vue3 tempate");
   <div class="w-full h-full flex justify-center items-center">
     <Result status="success">
       <template #icon>
-        <smile-twoTone />
+        <SmileTwoTone />
       </template>
       <template #title>
         <h1 class="text-primary text-opacity-60 p-4.25">{{ message }}</h1>

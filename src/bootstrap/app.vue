@@ -4,21 +4,35 @@
  * @author svon.me@gmail.com
  */
 
-import { ref } from "vue";
-import dayjs from "dayjs";
-import "dayjs/locale/zh-cn";
-import { ConfigProvider } from "ant-design-vue";
+import {ref} from "vue";
+import {style} from "src/config/style";
+import Index from "src/pages/home/index.vue";
 import zhCN from "ant-design-vue/es/locale/zh_CN";
+import {ConfigProvider, StyleProvider} from "ant-design-vue";
 
-import type { Locale } from "ant-design-vue/es/locale-provider";
+import type {Locale} from "ant-design-vue/es/locale-provider";
 
 const locale = ref<Locale>(zhCN);
-dayjs.locale("zh-cn");
+
+const theme = {
+  token: {
+    colorLink: style.primary,
+    colorPrimary: style.primary,
+    colorText: style.black,
+  },
+  components: {
+    Button: {
+      colorPrimary: style.primary
+    }
+  }
+};
 
 </script>
 
 <template>
-  <ConfigProvider :locale="locale">
-    <router-view />
+  <ConfigProvider :locale="locale" :theme="theme">
+    <StyleProvider hash-priority="low">
+      <Index></Index>
+    </StyleProvider>
   </ConfigProvider>
 </template>
